@@ -15,7 +15,12 @@ local rules = P {
              " | "
                   ), function(a, b) return a + b end)
   
-} / function(ruletab) ruletab[1] = V"rule_0"*-1; ruletab.rule_8 = (V"rule_42" - (V"rule_11"*-1))^1; ruletab.rule_11 = V"rule_42" * V"rule_11"^-1 * V"rule_31"; return P(ruletab) end
+} / function(ruletab)
+  ruletab[1] = V"rule_0"*-1
+  ruletab.rule_8 = (V"rule_42" - (V"rule_11"*-1))^1
+  ruletab.rule_11 = V"rule_42" * V"rule_11"^-1 * V"rule_31"
+  return P(ruletab)
+    end
 
 local inputpat = rules * "\n\n" * g.Ct(nsepseq(g.C(R"az"^0), "\n"))
 
