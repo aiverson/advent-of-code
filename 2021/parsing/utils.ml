@@ -11,3 +11,5 @@ let wsq = ws `rep` 0
 
 let int_parser = s "+-" `rep` -1 `seq` (r "09" `rep` 1) `cx` parse_int
 let float_parser = s "+-" `rep` -1 `seq` (r "09" `rep` 1) `seq` (p "." `seq` (r"09" `rep` 1 `seq` (s "eE" `seq` (s"+-" `rep` -1) `seq` (r "09" `rep` 1) `rep` -1) `rep` -1) `rep` -1) `cx` parse_float
+
+let lit str value = p str `seq` cc value
